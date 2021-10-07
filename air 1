@@ -1,0 +1,393 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+struct Address
+{
+string city;
+int streetNo;
+};
+struct Food_type
+{
+long ID;
+string name;
+float average_price;
+};
+struct restaurant
+{
+long ID;
+string name;
+int phone_number;
+Address address;
+string day_off;
+Food_type food;
+};
+restaurant info[10];
+void fill();
+void output();
+void f3();
+void f4();
+void f5();
+void f6();
+void f7();
+void f8();
+void f9();
+void f10();
+int main()
+{
+char choice = 'Y';
+int numm;
+do
+{
+cout << "Press 1 to fill data of database: " << endl;
+cout << "Press 2 to output data in the data base: " << endl;
+cout << "Press 3 to search on Chinese Food as a food type: " <<endl;
+cout << "Press 4 to search on the names of the restaurant in cairo:" << endl;
+cout << "Press 5 to search about food type that has average pricegreater than 500 L.E: " << endl;
+cout << "Press 6 to search on restaurant that present PIZZA as afood type: " << endl;
+cout << "Press 7 to search if there is restaurant working on sunday:" << endl;
+cout << "Press 8 to search on restaurant by ID: " << endl;
+cout << "Press 9 to search on food category with ID: " << endl;
+cout << "Press 10 to search about restaurant by day_off and street_no: " << endl;
+cout << "Press 11 to exit: " << endl; cout << endl;
+cout << "Enter your choice: ";
+cin >> numm;
+if (numm == 1)
+{
+fill();
+
+}
+else if (numm == 2)
+{
+output();
+}
+else if (numm == 3)
+{
+f3();
+}
+else if (numm == 4)
+{
+f4();
+}
+else if (numm == 5)
+{
+f5();
+}
+else if (numm == 6)
+{
+f6();
+}
+else if (numm == 7)
+{
+f7();
+}
+else if (numm == 8)
+{
+f8();
+}
+else if (numm == 9)
+{
+f9();
+}
+else if (numm == 10)
+{
+f10();
+}
+else if (numm == 11)
+{
+break;
+}
+cout << "Press Y to continue and N to stop: ";
+cin >> choice;
+}
+while (choice == 'Y' || choice == 'y');
+}
+void fill()
+{
+for (int i = 0; i < 10; i++)
+{
+cin.ignore();
+cout << "Enter the name of the city: ";
+getline(cin, info[i].address.city);
+cout << "Enter the street number: ";
+cin >> info[i].address.streetNo;
+cout << "Enter the Food Type ID: ";
+cin >> info[i].food.ID;
+cin.ignore();
+cout << "Enter the Food Type Name: ";
+getline(cin, info[i].food.name);
+cout << "Enter the Food average price: ";
+cin >> info[i].food.average_price;
+cout << "Enter the Restaurant ID: ";
+cin >> info[i].ID;
+cin.ignore();
+cout << "Enter the Restaurant Name: ";
+getline(cin, info[i].name);
+cout << "Enter the phone Number: ";
+cin >> info[i].phone_number;
+cout << "Enter the day_off: ";
+cin >> info[i].day_off; cout << endl;
+}
+system("cls");
+}
+void output()
+{
+system("cls");
+for (int i = 0; i < 10; i++)
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+void f3()
+{
+system("cls");
+for (int i = 0; i < 10; i++)
+{
+if ("chinese food" == info[i].food.name)
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f4()
+{
+system("cls");
+for (int i = 0; i < 10; i++)
+{
+if ("cairo" == info[i].address.city)
+{
+    cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f5()
+{
+system("cls");
+for (int i = 0; i < 10; i++)
+{
+if (info[i].food.average_price>500)
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f6()
+{
+system("cls");
+for (int i = 0; i < 10; i++)
+{
+if (info[i].food.name=="pizza")
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f7()
+{
+system("cls");
+for (int i = 0; i < 10; i++)
+{
+if (info[i].day_off != "sunday")
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f8()
+{
+system("cls");
+int n;
+cout << "Enter the Restaurant ID: ";
+cin >> n;
+for (int i = 0; i < 10; i++)
+{
+if (n==info[i].ID)
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f9()
+{
+system("cls");
+int y;
+cout << "Enter the Restaurant ID: ";
+cin >> y;
+for (int i = 0; i < 10; i++)
+{
+if (y == info[i].food.ID)
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
+void f10()
+{
+system("cls");
+int n;
+string h;
+cout << "Enter the day_off: ";
+cin >> h;
+cout << "Enter the street_no: ";
+cin >> n;
+for (int i = 0; i < 10; i++)
+{
+if (n==info[i].address.streetNo&h==info[i].day_off)
+{
+cout << "Name of the city: ";
+cout << info[i].address.city << endl;
+cout << "Street number: ";
+cout << info[i].address.streetNo << endl;
+cout << "Food Type ID: ";
+cout << info[i].food.ID << endl;
+cout << "Food Type Name: ";
+cout << info[i].food.name << endl;
+cout << "Food average price: ";
+cout << info[i].food.average_price << endl;
+cout << "Restaurant ID: ";
+cout << info[i].ID << endl;
+cout << "Restaurant Name: ";
+cout << info[i].name << endl;
+cout << "Phone Number: ";
+cout << info[i].phone_number << endl;
+cout << "The day_off: ";
+cout << info[i].day_off << endl; cout << endl;
+}
+}
+}
